@@ -8,5 +8,6 @@ For example:
    go "-X github.com/opdss/version.buildTimestamp=${TIMESTAMP}\
    -X github.com/opdss/version.buildCommitHash=${COMMIT}\
    -X github.com/opdss/version.buildVersion=${VERSION}\
+   -X github.com/opdss/version.buildBranch=${BRANCH}\
    -X github.com/opdss/version.buildRelease=${RELEASE}" build  
 ```
