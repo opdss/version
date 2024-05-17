@@ -12,6 +12,7 @@ var (
 	buildCommitHash string
 	buildVersion    string
 	buildRelease    string
+	buildBranch     string
 
 	Build build
 )
@@ -26,6 +27,7 @@ type build struct {
 	CommitHash string    `json:"hash"`      //commit hash
 	Timestamp  time.Time `json:"timestamp"` //编译时间
 	Release    bool      `json:"release"`   //是否发行版本
+	Branch     string    `json:"branch"`    //分支
 }
 
 func buildInfo() build {
@@ -37,6 +39,7 @@ func buildInfo() build {
 		Timestamp:  time.Unix(timestamp, 0),
 		CommitHash: buildCommitHash,
 		Version:    buildVersion,
+		Branch:     buildBranch,
 		Release:    strings.ToLower(buildRelease) == "true",
 	}
 }
